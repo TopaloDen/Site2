@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Main</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+
+<body>
+<div class="nav">
+    <!-- Left -->
+    <div class="leftObject">
+        <a href="/">Home</a>
+
+        <div class="stick"></div>
+
+        <a href="/about">About</a>
+    </div>
+
+    <!-- Right -->
+    <div class="rightObject">
+        <span> User : {{ user }} </span>
+
+        <div class="stick"></div>
+
+        {% if user.is_authenticated %}
+        <a href="users/logout">Logout</a>{% else %}
+        <a href="users/login/">Login</a>{% endif %}
+
+        <a href="/sign">Sign up</a>
+    </div>
+</div>
+</body>
+</html>
